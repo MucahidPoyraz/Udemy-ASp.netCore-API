@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@model Udemy.ConsumeAPI.ResponseModels.ProductResponseModel
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Yeni Dosya Ekle</title>
+</head>
+<body>
+
+    <h1>Dosya Ekle</h1>
+    <form asp-action="Upload" asp-controller="Home" method="post" enctype="multipart/form-data">
+      
+        <label>Dosya Seç:</label>
+        <input type="file" name="file"/>
+
+        <br /><hr /><br />
+
+    
+
+        <div>
+            <a asp-action="Index" asp-controller="Home">Geri Dön</a>
+            <button type="submit">Gönder</button>
+        </div>
+
+    </form>
+</body>
+</html>

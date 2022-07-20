@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@model Udemy.ConsumeAPI.ResponseModels.ProductResponseModel
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ürün Guncelle</title>
+</head>
+<body>
+
+    @{
+        if(TempData["EM"] != null)
+        {
+                <p style="color:red">
+                @TempData["EM"]?.ToString();
+                </p>
+        }
+    }
+
+    <h1>Ürün Guncelle</h1>
+    <form asp-action="Update" asp-controller="Home" method="post">
+        <input type="hidden" asp-for="@Model.Id"/>
+        <label>Ürün Adı:</label>
+        <input type="text" asp-for="@Model.Name"/>
+
+        <br /><hr /><br />
+
+        <label>Ürün Fiyatı:</label>
+        <input asp-for="@Model.Price"/>
+        
+        <br /><hr /><br />
+
+        <label>Ürün Stok:</label>
+        <input asp-for="@Model.Stock"/>
+        
+        <br /><hr /><br />
+
+        <div>
+            <a asp-action="Index" asp-controller="Home">Geri Dön</a>
+            <button type="submit">Gönder</button>
+        </div>
+
+    </form>
+</body>
+</html>
